@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tahiruddin Sekh - Portfolio</title>
+  <link rel="shortcut icon" href="/img/favicon.png" type="png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <script src="https://kit.fontawesome.com/4295c549fd.js" crossorigin="anonymous" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap"
+    rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://smtpjs.com/v3/smtp.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <a href="#" class="logo">
+        <img src="/img/logo.png" alt="Logo">
+      </a>
+      <span class="brand-name">Tahiruddin Sekh</span>
+    </div>
+    <input hidden class="check-icon" id="check-icon" name="check-icon" type="checkbox">
+    <label class="icon-menu" for="check-icon">
+      <div class="bar bar--1"></div>
+      <div class="bar bar--2"></div>
+      <div class="bar bar--3"></div>
+    </label>
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-left">
+      <h1><small>Hi I'm</small>
+        Tahiruddin Sekh
+      </h1>
+      <p>Passionate web developer creating beautiful and functional websites. Expertise in Design and Development,
+        focused on delivering exceptional user experiences. Dedicated to bringing ideas to life through innovative web
+        solutions.</p>
+      <a href="https://drive.google.com/file/d/1i9xmM4I-wVuwLcJ9x0rwf6e3BiZAV7wt/view?usp=sharing" class="btn">View Resume</a>
+      <a href="#contact" class="btn secondary">Contact Me</a>
+    </div>
+    <div class="hero-right">
+      <img src="/img/profile.png" alt="My Profile">
+    </div>
+  </section>
+
+  <!-- Skills Section with Auto-Slide Animation -->
+  <section id="skills" class="skills-slider">
+    <div class="skill-slide">
+      <img src="/img/skills/html.png" alt="HTML">
+      <img src="/img/skills/css.png" alt="CSS">
+      <img src="/img/skills/php.png" alt="Php">
+      <img src="/img/skills/javascript.png" alt="JavaScript" style="border-radius: 10px;">
+      <img src="/img/skills/wordpress.png" alt="WordPress" style="border-radius: 10px;">
+      <img src="/img/skills/github.png" alt="github">
+      <img src="/img/skills/figma.png" alt="figma">
+      <img src="/img/skills/shopify.png" alt="Shopify">
+      <img src="/img/skills/vscode.png" alt="vscode">
+      <img src="/img/skills/react.png" alt="React">
+      <img src="/img/skills/bootstrap.png" alt="bootstrap">
+      <img src="/img/skills/git.png" alt="git">
+      <img src="/img/skills/cp.png" alt="cpanel">
+      <img src="/img/skills/mysql.png" alt="mysql">
+      <!-- duplicate-imgges -->
+      <img src="/img/skills/html.png" alt="HTML">
+      <img src="/img/skills/css.png" alt="CSS">
+      <img src="/img/skills/php.png" alt="Php">
+      <img src="/img/skills/javascript.png" alt="JavaScript" style="border-radius: 10px;">
+      <img src="/img/skills/wordpress.png" alt="WordPress" style="border-radius: 10px;">
+      <img src="/img/skills/github.png" alt="github">
+      <img src="/img/skills/figma.png" alt="figma">
+      <img src="/img/skills/shopify.png" alt="Shopify">
+      <img src="/img/skills/vscode.png" alt="vscode">
+      <img src="/img/skills/react.png" alt="React">
+      <img src="/img/skills/bootstrap.png" alt="bootstrap">
+      <img src="/img/skills/git.png" alt="git">
+      <img src="/img/skills/cp.png" alt="cpanel">
+      <img src="/img/skills/mysql.png" alt="mysql">
+    </div>
+  </section>
+  <!-- About Me Section -->
+  <section id="about">
+    <div class="main-title">
+      <h2>About <span>Me</span></h2>
+    </div>
+    <div class="about-container">
+      <div class="about-me">
+        <h2>A Little <span>About Me</span></h2>
+        <p>As a dedicated WordPress Website Developer with over 3 years of expertise, I specialize in creating
+          and
+          optimizing eCommerce and dynamic websites. My proficiency spans across WordPress, WooCommerce, Elementor,
+          HTML,
+          and CSS, enabling me to deliver high-quality solutions for clients ranging from small businesses to large
+          enterprises.
+        </p>
+        <a href="https://drive.google.com/file/d/1i9xmM4I-wVuwLcJ9x0rwf6e3BiZAV7wt/view?usp=sharing" class="btn">View Resume</a>
+      </div>
+      <div class="image">
+        <img src="img/coder.gif" alt="About Me Image">
+      </div>
+    </div>
+    <!-- Timeline-start -->
+    <div id="timeline">
+      <div class="main-title">
+        <h2>My <span>Timeline</span></h2>
+      </div>
+      <!-- Toggle buttons (visible on mobile) -->
+      <div class="toggle-buttons">
+        <button id="educationToggle" class="active" onclick="showEducation()">Education</button>
+        <button id="trainingToggle" onclick="showTraining()">Exprience</button>
+      </div>
+
+      <div class="timeline">
+        <!-- Education Timeline Column -->
+        <div class="timeline-column education-column" id="educationTimeline">
+          <h2 class="edu">Education</h2>
+          <div class="timeline-item">
+            <div class="tl-icon"><i class="fas fa-graduation-cap"></i></div>
+            <p class="tl-duration">2019 - 2021</p>
+            <h5>Diploma in CSE<span> - JIT College</span></h5>
+            <p>I have completed a Diploma in Computer Science and Engineering from Jahangirabad Institute of Technology
+              for Polytechnic. In addition to being challenging and rigorous, the program provided me with a
+              comprehensive education. As a result of my dedication to academic excellence, I achieved a CGPA of 7.1</p>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-icon"><i class="fas fa-graduation-cap"></i></div>
+            <p class="tl-duration">2017 - 2019</p>
+            <h5>Vocational in CS<span> - Satish Chandra Govt ITI</span></h5>
+            <p>I have Completed my Vocational in Computer Science form Satish Chandra govt ITI and Secured 6.9 CGPA. My
+              vocational education has prepared me for a career in the technology industry, and I'm eager to utilize my
+              knowledge and contribute to the advancement of computer science and technology</p>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-icon"><i class="fas fa-graduation-cap"></i></div>
+            <p class="tl-duration">2017 - 2019</p>
+            <h5>High School<span> - Mamoon National School</span></h5>
+            <p>I have completed my High School education from Mamoon National School and secured a CGPA of 6.63. My high
+              school education provided a strong academic foundation, nurturing my curiosity and shaping my
+              determination to achieve success in my future endeavors</p>
+            </p>
+          </div>
+        </div>
+
+        <!-- Training Timeline Column -->
+        <div class="timeline-column training-column" id="trainingTimeline" style="display: none;">
+          <h2 class="training">Exprience</h2>
+          <div class="timeline-item">
+            <div class="tl-icon"><i class="fas fa-tools"></i></div>
+            <p class="tl-duration">Feb 2024 - Present</p>
+            <h5>Web Administrator<span> - Toile, Remote</span></h5>
+            <ul>
+              <li>Migrated the company’s website from cPanel to Hostinger, ensuring a seamless transition.</li>
+              <li>Enhanced mobile and desktop performance, achieving a mobile performance score of 100% and desktop
+                performance score of 92%.</li>
+              <li>Managed technical customer queries, fostering strong customer relationships and driving improvements.
+              </li>
+              <!-- <li>Supervised multivendor operations and resolved email account issues efficiently.</li> -->
+            </ul>
+            <!-- <a href="#"><h6>View Certificate</h6></a> -->
+          </div>
+          <div class="timeline-item">
+            <div class="tl-icon"><i class="fas fa-tools"></i></div>
+            <p class="tl-duration">Jan 2023 - Mar 2023</p>
+            <h5>CNID Apprenticeship<span> - ECIL Hyderabad</span></h5>
+            <ul>
+              <li>Contributed to communication and network infrastructure projects, gaining practical hands-on
+                experience.</li>
+              <li>Worked with SCADA systems for real-time monitoring and industrial process control.</li>
+            </ul>
+            <!-- <a href="#"><h6>View Certificate</h6></a> -->
+          </div>
+          <div class="timeline-item">
+            <div class="tl-icon"><i class="fas fa-tools"></i></div>
+            <p class="tl-duration">May 2021</p>
+            <h5>MERN Full Stack Developer Training<span> - FSA, Hyderabad</span></h5>
+            <ul>
+              <li>Acquired and utilized skills in MongoDB, Express.js, React, and Node.js to build and deploy full-stack
+                web applications.</li>
+            </ul>
+            <!-- <a href="#"><h6>View Certificate</h6></a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Portfolio-Section -->
+  <section id="portfolio" class="py-5">
+    <div class="portfolio-container">
+      <div class="main-title">
+        <h2>My <span>Work</span></h2>
+      </div>
+      <!-- Filter Buttons -->
+      <div class="d-flex flex-wrap justify-content-center mb-4 gap-2">
+        <button class="btn btn-outline-primary filter-btn active" data-filter="all">All</button>
+        <button class="btn btn-outline-primary filter-btn" data-filter="e-Commerce">e-Commerce</button>
+        <button class="btn btn-outline-primary filter-btn" data-filter="Landing-Page">Landing Page</button>
+        <button class="btn btn-outline-primary filter-btn" data-filter="Portfolio">Portfolio</button>
+        <button class="btn btn-outline-primary filter-btn" data-filter="Commercial">Commercial</button>
+      </div>      
+      <!-- Portfolio Grid -->
+      <div class="row">
+        <!-- Portfolio Item 1 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 portfolio-item" data-category="e-Commerce">
+          <div class="card">
+            <a href="/img/project/gulsan-view.png" data-lightbox="portfolio">
+              <img src="/img/project/gl.png" class="card-img-top" alt="Project 1">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Gulsan Libas</h5>
+              <a href="https://example.com" target="_blank" class="btn btn-primary btn-md"><i
+                  class="fas fa-external-link-alt"></i> View Live</a>
+            </div>
+          </div>
+        </div>
+        <!-- Portfolio Item 2 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 portfolio-item" data-category="Commercial">
+          <div class="card">
+            <a href="/img/project/hospilaty-view.png" data-lightbox="portfolio">
+              <img src="img/project/hospilaty-cover.png" class="card-img-top" alt="Project 2">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Sahyadri Hospital</h5>
+              <a href="https://example.com" target="_blank" class="btn btn-primary btn-md"><i
+                  class="fas fa-external-link-alt"></i> View Live</a>
+            </div>
+          </div>
+        </div>
+        <!-- Portfolio Item 3 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 portfolio-item" data-category="Portfolio">
+          <div class="card">
+            <a href="/img/project/personal-view.png" data-lightbox="portfolio">
+              <img src="img/project/personal-cover.png" class="card-img-top" alt="Project 3">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Personal Portfolio</h5>
+              <a href="https://example.com" target="_blank" class="btn btn-primary btn-md"><i
+                  class="fas fa-external-link-alt"></i> View Live</a>
+            </div>
+          </div>
+        </div>
+        <!-- Portfolio Item 4 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 portfolio-item" data-category="Commercial">
+          <div class="card">
+            <a href="/img/project/recipe-fine-view.png" data-lightbox="portfolio">
+              <img src="img/project/recipe-cover.png" class="card-img-top" alt="Project 4">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Food Recipe</h5>
+              <a href="https://example.com" target="_blank" class="btn btn-primary btn-md"><i
+                  class="fas fa-external-link-alt"></i> View Live</a>
+            </div>
+          </div>
+        </div>
+        <!-- Portfolio Item 5 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 portfolio-item" data-category="e-Commerce">
+          <div class="card">
+            <a href="/img/project/dlozi-view.jpg" data-lightbox="portfolio">
+              <img src="img/project/dlozi-cover.png" class="card-img-top" alt="Project 5">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Dlozi</h5>
+              <a href="https://example.com" target="_blank" class="btn btn-primary btn-md"><i
+                  class="fas fa-external-link-alt"></i> View Live</a>
+            </div>
+          </div>
+        </div>
+        <!-- Portfolio Item 6 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 portfolio-item" data-category="Landing-Page">
+          <div class="card">
+            <a href="/img/project/Restaurant-view.jpg" data-lightbox="portfolio">
+              <img src="img/project/resturant-cover.png" class="card-img-top" alt="Project 6">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Resturant Landing Page</h5>
+              <a href="https://example.com" target="_blank" class="btn btn-primary btn-md"><i
+                  class="fas fa-external-link-alt"></i> View Live</a>
+            </div>
+          </div>
+        </div>
+        <!-- Portfolio Item 7 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 portfolio-item" data-category="Commercial">
+          <div class="card">
+            <a href="/img/project/interio-view.png" data-lightbox="portfolio">
+              <img src="img/project/interio-cover.png" class="card-img-top" alt="Project 7">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Modern Interio Designs</h5>
+              <a href="https://example.com" target="_blank" class="btn btn-primary btn-md"><i
+                  class="fas fa-external-link-alt"></i> View Live</a>
+            </div>
+          </div>
+        </div>
+        <!-- Portfolio Item 8 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 portfolio-item" data-category="Landing-Page">
+          <div class="card">
+            <a href="/img/project/healthy-view.png" data-lightbox="portfolio">
+              <img src="img/project/healty-cover.png" class="card-img-top" alt="Project 8">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Healthy Blog</h5>
+              <a href="https://example.com" target="_blank" class="btn btn-primary btn-md"><i
+                  class="fas fa-external-link-alt"></i> View Live</a>
+            </div>
+          </div>
+        </div>
+        <!-- Portfolio Item 9 -->
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 portfolio-item" data-category="Portfolio">
+          <div class="card">
+            <a href="/img/project/portfolio-view.png" data-lightbox="portfolio">
+              <img src="img/project/portfolio-cover.png" class="card-img-top" alt="Project 8">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Portfolio</h5>
+              <a href="https://example.com" target="_blank" class="btn btn-primary btn-md"><i
+                  class="fas fa-external-link-alt"></i> View Live</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="main-title">
+      <h2>Contact <span>Me</span></h2>
+    </div>
+    <div class="container">
+      <div class="screen">
+        <div class="screen-header">
+          <div class="screen-header-left">
+            <div class="screen-header-button close"></div>
+            <div class="screen-header-button maximize"></div>
+            <div class="screen-header-button minimize"></div>
+          </div>
+          <div class="screen-header-right">
+            <div class="screen-header-ellipsis"></div>
+            <div class="screen-header-ellipsis"></div>
+            <div class="screen-header-ellipsis"></div>
+          </div>
+        </div>
+        <div class="screen-body">
+          <div class="screen-body-item left">
+            <div class="app-title">
+              <span>Let's</span>
+              <span>Connect</span>
+            </div>
+            <p>Reach out to me using the contact details provided. Let's connect and explore opportunities together!</p>
+            <ul class="social-list">
+              <li>
+                <a href="https://www.linkedin.com/in/iamsekh/" class="social-icon" target="_top" title="LinkedIn">
+                  <span class="fab fa-linkedin-in"></span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/iamsekh" class="social-icon" target="_top" title="Facebook">
+                  <span class="fab fa-github"></span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/i_tahiruddin/" class="social-icon" target="_top" title="Dribbble">
+                  <span class="fab fa-instagram"></span>
+                </a>
+              </li>
+            </ul>
+            <!-- <div class="app-contact">CONTACT INFO : +91 8670563907</div> -->
+          </div>
+          <div class="screen-body-item">
+            <div class="app-form">
+              <div class="app-form-group">
+                <input class="app-form-control" id="name" placeholder="NAME" type="text">
+              </div>
+              <div class="app-form-group">
+                <input class="app-form-control" id="email" placeholder="EMAIL" type="email">
+              </div>
+              <div class="app-form-group">
+                <input class="app-form-control" id="phone" placeholder="CONTACT NO" type="text">
+              </div>
+              <div class="app-form-group message">
+                <input class="app-form-control" id="message" placeholder="MESSAGE" type="text">
+              </div>
+              <div class="app-form-group buttons">
+                <button class="app-form-button" type="button" onclick="sendEmail()">SEND</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <footer>
+    <p>Design and Develop By &copy; Tahiuddin Sekh</p>
+  </footer>
+  <script src="https://smtpjs.com/v3/smtp.js">
+  </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+  <script src="script.js"></script>
+  <script src="timeline.js"></script>
+  <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+    data-id="tahiruddinsk" data-description="Support me on Buy me a coffee!"
+    data-message="Thank for visiting. You can buy me a coffee" data-color="#9c7811" data-position="Right"
+    data-x_margin="14" data-y_margin="14"></script>
+</body>
+</html>
