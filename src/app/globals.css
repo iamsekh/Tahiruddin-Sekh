@@ -1,26 +1,172 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ─── Design tokens ──────────────────────────────── */
+@theme {
+  --color-background: #ffffff;
+  --color-surface:    #fafafa;
+  --color-surface2:   #f5f5f5;
+  --color-accent:     #000000;
+  --color-foreground: #09090b;
+  --color-muted:      #71717a;
+  --color-border:     #e4e4e7;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ─── Base reset ─────────────────────────────────── */
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: #ffffff;
+    color: #09090b;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+  ::selection {
+    background: #000;
+    color: #fff;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ─── Lenis ─────────────────────────────────────── */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* ─── Glass ──────────────────────────────────────── */
+.glass {
+  background: rgba(255, 255, 255, 0.72);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* ─── Section Tag ────────────────────────────────── */
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #71717a;
+  background: #fafafa;
+  border-radius: 9999px;
+  padding: 0.5rem 1.2rem;
+  border: 1px solid #e4e4e7;
+}
+
+/* ─── Buttons ────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  background: #000;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border-radius: 9999px;
+  padding: 0.9rem 2rem;
+  transition: all 0.3s cubic-bezier(.25,.46,.45,.94);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.btn-primary:hover::before { opacity: 1; }
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.35);
+}
+.btn-primary:active { transform: translateY(0); }
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  background: #fff;
+  color: #000;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border-radius: 9999px;
+  padding: 0.9rem 2rem;
+  transition: all 0.3s cubic-bezier(.25,.46,.45,.94);
+  border: 1.5px solid #e4e4e7;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-secondary:hover {
+  background: #fafafa;
+  border-color: #d4d4d8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+}
+
+/* ─── Card Hover ─────────────────────────────────── */
+.card-hover {
+  transition: transform 0.4s cubic-bezier(.25,.46,.45,.94), box-shadow 0.4s ease;
+}
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 32px 64px -16px rgba(0,0,0,0.1);
+}
+
+/* ─── Subtle Shadow ──────────────────────────────── */
+.subtle-shadow {
+  box-shadow: 0 12px 40px -8px rgba(0,0,0,0.08);
+}
+
+/* ─── Reveal line animation (horizontal rule) ────── */
+.reveal-line {
+  transform-origin: left center;
+  transform: scaleX(0);
+}
+
+/* ─── Text gradient ──────────────────────────────── */
+.text-gradient {
+  background: linear-gradient(135deg, #000 0%, #555 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Marquee ────────────────────────────────────── */
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+.marquee-left  { animation: marquee-left  30s linear infinite; }
+.marquee-right { animation: marquee-right 30s linear infinite; }
+.marquee-left:hover,
+.marquee-right:hover { animation-play-state: paused; }
+
+/* ─── Dot Grid Background ────────────────────────── */
+.dot-grid {
+  background-image: radial-gradient(circle, #e4e4e7 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ─── Glow ───────────────────────────────────────── */
+.glow-subtle {
+  box-shadow: 0 0 60px 20px rgba(0,0,0,0.03);
 }
