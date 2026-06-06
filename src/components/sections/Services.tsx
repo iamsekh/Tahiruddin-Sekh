@@ -58,16 +58,16 @@ export default function Services() {
   }, []);
 
   return (
-    <section id="services" ref={containerRef} className="py-32 bg-surface relative overflow-hidden">
+    <section id="services" ref={containerRef} className="py-16 md:py-20 bg-background relative overflow-hidden">
       {/* Gradient separator */}
-      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-200 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-800 to-transparent" />
       
       <div className="container mx-auto px-6 max-w-7xl">
         {/* header */}
-        <div className="max-w-2xl mb-20">
+        <div className="max-w-2xl mb-12 md:mb-20">
           <div className="section-tag mb-6">What I do</div>
-          <h2 className="text-4xl md:text-[3.5rem] font-black tracking-[-0.03em] text-black leading-[1.1]">
-            Services &amp;<br /><span className="text-zinc-300">Expertise</span>
+          <h2 className="text-4xl md:text-[3.5rem] font-black tracking-[-0.03em] text-white leading-[1.1]">
+            Services &amp;<br /><span className="text-zinc-600">Expertise</span>
           </h2>
         </div>
 
@@ -77,23 +77,23 @@ export default function Services() {
             const Icon = s.icon;
             return (
               <div key={s.title}
-                className="svc-card group relative bg-white rounded-[1.5rem] p-8 border border-zinc-100 overflow-hidden transition-all duration-400 hover:border-zinc-200 hover:shadow-[0_24px_60px_-12px_rgba(0,0,0,0.08)] hover:-translate-y-1">
+                className="svc-card group relative bg-zinc-900 rounded-[1.5rem] p-8 border border-zinc-800 overflow-hidden transition-all duration-400 hover:border-[#39ff14]/50 hover:shadow-[0_24px_60px_-12px_rgba(57,255,20,0.1)] hover:-translate-y-1">
                 
                 {/* Hover gradient reveal */}
-                <div className="absolute inset-0 bg-gradient-to-br from-zinc-50/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#39ff14]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
                 <div className="relative z-10 flex flex-col h-full gap-5">
                   {/* Icon */}
-                  <div className="w-12 h-12 rounded-xl bg-zinc-100 flex items-center justify-center group-hover:bg-black group-hover:text-white transition-all duration-300">
+                  <div className="w-12 h-12 rounded-xl bg-black/50 border border-zinc-800 flex items-center justify-center text-[#39ff14] group-hover:bg-[#39ff14] group-hover:text-black transition-all duration-300">
                     <Icon size={22} strokeWidth={1.8} />
                   </div>
                   
-                  <h3 className="text-xl font-bold text-black leading-tight tracking-tight">{s.title}</h3>
-                  <p className="text-zinc-500 leading-relaxed text-[14px] flex-grow">{s.desc}</p>
+                  <h3 className="text-xl font-bold text-white leading-tight tracking-tight">{s.title}</h3>
+                  <p className="text-zinc-400 leading-relaxed text-[14px] flex-grow">{s.desc}</p>
                   
                   <div className="flex flex-wrap gap-1.5 pt-1">
                     {s.tags.map(t => (
-                      <span key={t} className="text-[11px] font-semibold bg-zinc-50 text-zinc-500 rounded-full px-3 py-1 border border-zinc-100">
+                      <span key={t} className="text-[11px] font-semibold bg-black text-zinc-400 rounded-full px-3 py-1 border border-zinc-800">
                         {t}
                       </span>
                     ))}

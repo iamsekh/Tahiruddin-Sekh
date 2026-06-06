@@ -78,26 +78,26 @@ export default function Experience() {
   }, [tab]);
 
   return (
-    <section id="experience" ref={containerRef} className="py-32 bg-white relative overflow-hidden">
+    <section id="experience" ref={containerRef} className="py-16 md:py-20 bg-background relative overflow-hidden">
       {/* Gradient separator */}
-      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-200 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-800 to-transparent" />
       
       <div className="container mx-auto px-6 max-w-5xl">
         {/* header */}
-        <div className="mb-16">
+        <div className="mb-12 md:mb-16">
           <div className="section-tag mb-6">Background</div>
-          <h2 className="text-4xl md:text-[3.5rem] font-black tracking-[-0.03em] text-black leading-[1.1]">
-            Experience &amp;<br /><span className="text-zinc-300">Education</span>
+          <h2 className="text-4xl md:text-[3.5rem] font-black tracking-[-0.03em] text-white leading-[1.1]">
+            Experience &amp;<br /><span className="text-zinc-600">Education</span>
           </h2>
 
           {/* tabs */}
-          <div className="flex gap-2 mt-10 p-1 bg-zinc-100 rounded-full w-fit">
+          <div className="flex gap-2 mt-10 p-1 bg-zinc-900 rounded-full w-fit">
             <button onClick={() => setTab("exp")}
-              className={`flex items-center gap-2 px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 ${tab === "exp" ? "bg-black text-white shadow-lg" : "text-zinc-500 hover:text-black"}`}>
+              className={`flex items-center gap-2 px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 ${tab === "exp" ? "bg-[#39ff14] text-black shadow-lg" : "text-zinc-400 hover:text-white"}`}>
               <Briefcase size={15} /> Work
             </button>
             <button onClick={() => setTab("edu")}
-              className={`flex items-center gap-2 px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 ${tab === "edu" ? "bg-black text-white shadow-lg" : "text-zinc-500 hover:text-black"}`}>
+              className={`flex items-center gap-2 px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 ${tab === "edu" ? "bg-[#39ff14] text-black shadow-lg" : "text-zinc-400 hover:text-white"}`}>
               <GraduationCap size={15} /> Education
             </button>
           </div>
@@ -111,29 +111,29 @@ export default function Experience() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="relative pl-8 border-l-2 border-zinc-100 space-y-8"
+            className="relative pl-8 border-l-2 border-zinc-800 space-y-8"
           >
             {tab === "exp"
               ? experience.map((e, i) => (
                 <div key={i} className="timeline-item relative group">
                   {/* Dot */}
-                  <div className="absolute -left-[1.56rem] top-8 w-3 h-3 rounded-full bg-black ring-4 ring-white shadow-sm" />
+                  <div className="absolute -left-[1.56rem] top-8 w-3 h-3 rounded-full bg-[#39ff14] ring-4 ring-background shadow-sm" />
                   
-                  <div className="bg-white border border-zinc-100 rounded-2xl p-8 hover:border-zinc-200 hover:shadow-[0_16px_40px_-12px_rgba(0,0,0,0.06)] transition-all duration-300">
+                  <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 hover:border-[#39ff14]/50 hover:shadow-[0_16px_40px_-12px_rgba(57,255,20,0.1)] transition-all duration-300">
                     <div className="flex flex-wrap gap-3 items-start justify-between mb-5">
                       <div>
-                        <h3 className="text-xl font-bold text-black tracking-tight">{e.title}</h3>
-                        <p className="text-zinc-500 font-medium text-sm mt-1">{e.company}</p>
+                        <h3 className="text-xl font-bold text-white tracking-tight">{e.title}</h3>
+                        <p className="text-zinc-400 font-medium text-sm mt-1">{e.company}</p>
                       </div>
-                      <div className="flex items-center gap-2 text-[11px] font-bold text-zinc-400 bg-zinc-50 border border-zinc-100 rounded-full px-3 py-1.5 uppercase tracking-wider">
+                      <div className="flex items-center gap-2 text-[11px] font-bold text-zinc-400 bg-black border border-zinc-800 rounded-full px-3 py-1.5 uppercase tracking-wider">
                         <Calendar size={11} /> {e.period}
-                        <span className="text-zinc-300">· {e.type}</span>
+                        <span className="text-zinc-600">· {e.type}</span>
                       </div>
                     </div>
                     <ul className="space-y-3">
                       {e.bullets.map((b, j) => (
-                        <li key={j} className="flex gap-3 text-[14px] text-zinc-500 leading-relaxed">
-                          <ArrowUpRight size={14} className="mt-0.5 text-zinc-300 shrink-0" />
+                        <li key={j} className="flex gap-3 text-[14px] text-zinc-400 leading-relaxed">
+                          <ArrowUpRight size={14} className="mt-0.5 text-[#39ff14] shrink-0" />
                           {b}
                         </li>
                       ))}
@@ -143,19 +143,19 @@ export default function Experience() {
               ))
               : education.map((e, i) => (
                 <div key={i} className="timeline-item relative group">
-                  <div className="absolute -left-[1.56rem] top-8 w-3 h-3 rounded-full bg-black ring-4 ring-white shadow-sm" />
+                  <div className="absolute -left-[1.56rem] top-8 w-3 h-3 rounded-full bg-[#39ff14] ring-4 ring-background shadow-sm" />
                   
-                  <div className="bg-white border border-zinc-100 rounded-2xl p-8 hover:border-zinc-200 hover:shadow-[0_16px_40px_-12px_rgba(0,0,0,0.06)] transition-all duration-300">
+                  <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 hover:border-[#39ff14]/50 hover:shadow-[0_16px_40px_-12px_rgba(57,255,20,0.1)] transition-all duration-300">
                     <div className="flex flex-wrap gap-3 items-start justify-between mb-3">
                       <div>
-                        <h3 className="text-xl font-bold text-black tracking-tight">{e.title}</h3>
-                        <p className="text-zinc-500 font-medium text-sm mt-1">{e.institution}</p>
+                        <h3 className="text-xl font-bold text-white tracking-tight">{e.title}</h3>
+                        <p className="text-zinc-400 font-medium text-sm mt-1">{e.institution}</p>
                       </div>
-                      <div className="flex items-center gap-2 text-[11px] font-bold text-zinc-400 bg-zinc-50 border border-zinc-100 rounded-full px-3 py-1.5 uppercase tracking-wider">
+                      <div className="flex items-center gap-2 text-[11px] font-bold text-zinc-400 bg-black border border-zinc-800 rounded-full px-3 py-1.5 uppercase tracking-wider">
                         <Calendar size={11} /> {e.period}
                       </div>
                     </div>
-                    <p className="text-[14px] text-zinc-500 leading-relaxed">{e.desc}</p>
+                    <p className="text-[14px] text-zinc-400 leading-relaxed">{e.desc}</p>
                   </div>
                 </div>
               ))

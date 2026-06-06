@@ -28,27 +28,27 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={containerRef} id="home" className="relative min-h-screen flex items-end overflow-hidden pb-0 pt-36 bg-white">
-      <div className="absolute inset-0 dot-grid opacity-[0.35] pointer-events-none" />
+    <section ref={containerRef} id="home" className="relative min-h-screen flex items-center lg:items-end overflow-hidden pb-0 pt-28 md:pt-36 lg:pt-40 bg-background">
+      <div className="absolute inset-0 dot-grid opacity-[0.2] pointer-events-none" />
       
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-40 right-0 w-[700px] h-[700px] rounded-full bg-gradient-to-br from-zinc-100 to-zinc-50 blur-[120px] opacity-80" />
-        <div className="absolute bottom-0 -left-40 w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-zinc-100 to-zinc-50 blur-[100px] opacity-60" />
+        <div className="absolute -top-40 right-0 w-[700px] h-[700px] rounded-full bg-gradient-to-br from-[#39ff14]/10 to-transparent blur-[120px] opacity-80" />
+        <div className="absolute bottom-0 -left-40 w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-[#39ff14]/5 to-transparent blur-[100px] opacity-60" />
       </div>
 
-      <div className="container mx-auto px-6 max-w-7xl grid lg:grid-cols-2 gap-12 items-end relative z-10">
+      <div className="container mx-auto px-6 max-w-7xl grid lg:grid-cols-2 gap-8 lg:gap-12 items-center lg:items-end relative z-10">
         {/* ── Left Column ── */}
-        <div className="flex flex-col gap-8 pb-20 lg:pb-32">
+        <div className="flex flex-col gap-6 lg:gap-8 pb-4 lg:pb-32">
           <div className="hero-tag section-tag w-fit">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#39ff14] opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#39ff14]" />
             </span>
             Available for opportunities
           </div>
 
           <div className="overflow-hidden">
-            <h1 className="text-[clamp(3.5rem,8vw,7rem)] font-black tracking-[-0.04em] leading-[0.95] text-black">
+            <h1 className="text-[clamp(3.5rem,8vw,7rem)] font-black tracking-[-0.04em] leading-[0.95] text-white">
               <span className="hero-name-line block">Tahiruddin</span>
               <span className="hero-name-line block text-gradient">Sekh</span>
             </h1>
@@ -58,23 +58,23 @@ export default function Hero() {
             WordPress &amp; Web Developer
           </p>
 
-          <p className="hero-desc text-[17px] text-zinc-500 leading-[1.7] max-w-md">
+          <p className="hero-desc text-[17px] text-zinc-400 leading-[1.7] max-w-md">
             Building beautiful, high-performance websites and web apps for 4+ years — specialising in WordPress, WooCommerce, Shopify, and modern front-end frameworks.
           </p>
 
-          <div className="hero-cta-wrap flex flex-row items-center gap-4 pt-1">
+          <div className="hero-cta-wrap flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-1 w-full">
             <a href="https://drive.google.com/file/d/1L2MezHz7-9G60Uwive_fOPAlix7TNwaN/view?usp=sharing"
-              target="_blank" rel="noopener noreferrer" className="btn-primary">
+              target="_blank" rel="noopener noreferrer" className="btn-primary w-full sm:w-auto">
               View Resume <Download size={16} />
             </a>
-            <Link href="#contact" className="btn-secondary">
+            <Link href="#contact" className="btn-secondary w-full sm:w-auto">
               Contact Me <ArrowRight size={16} />
             </Link>
           </div>
         </div>
 
         {/* ── Right Column ── */}
-        <div className="hero-image-wrap relative w-full h-[550px] md:h-[650px] lg:h-[750px] flex items-end justify-center">
+        <div className="hero-image-wrap relative w-full h-[450px] md:h-[550px] lg:h-[750px] flex items-end justify-center mt-2 lg:mt-0">
           
           {/* Main Image */}
           <div className="relative w-full h-full z-10 drop-shadow-[0_20px_50px_rgba(0,0,0,0.15)] pointer-events-none">
@@ -93,7 +93,7 @@ export default function Hero() {
           <motion.div 
             animate={{ y: [0, -12, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="hero-badge absolute top-[15%] left-[2%] z-20 hidden md:flex items-center justify-center w-16 h-16 bg-white rounded-full shadow-lg"
+            className="hero-badge absolute top-[15%] left-[2%] z-20 hidden md:flex items-center justify-center w-16 h-16 bg-zinc-900/80 backdrop-blur-md border border-zinc-800 rounded-full shadow-lg"
           >
             <Image src="/img/skills/react.png" alt="React" width={36} height={36} className="object-contain" />
           </motion.div>
@@ -102,7 +102,7 @@ export default function Hero() {
           <motion.div 
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-            className="hero-badge absolute bottom-[25%] left-[2%] z-20 hidden md:flex items-center justify-center w-16 h-16 bg-white rounded-full shadow-lg text-[#d97757]"
+            className="hero-badge absolute bottom-[25%] left-[2%] z-20 hidden md:flex items-center justify-center w-16 h-16 bg-zinc-900/80 backdrop-blur-md border border-zinc-800 rounded-full shadow-lg text-[#d97757]"
           >
             <SiAnthropic size={36} />
           </motion.div>
@@ -111,7 +111,7 @@ export default function Hero() {
           <motion.div 
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-            className="hero-badge absolute top-[18%] right-[2%] z-20 hidden md:flex items-center justify-center w-16 h-16 bg-white rounded-full shadow-lg"
+            className="hero-badge absolute top-[18%] right-[2%] z-20 hidden md:flex items-center justify-center w-16 h-16 bg-zinc-900/80 backdrop-blur-md border border-zinc-800 rounded-full shadow-lg"
           >
             <Image src="/img/skills/wordpress.png" alt="WordPress" width={36} height={36} className="object-contain" />
           </motion.div>
@@ -120,25 +120,25 @@ export default function Hero() {
           <motion.div 
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
-            className="hero-badge absolute bottom-[25%] right-[2%] z-20 hidden md:flex items-center justify-center w-16 h-16 bg-white rounded-full shadow-lg text-[#10a37f]"
+            className="hero-badge absolute bottom-[25%] right-[2%] z-20 hidden md:flex items-center justify-center w-16 h-16 bg-zinc-900/80 backdrop-blur-md border border-zinc-800 rounded-full shadow-lg text-[#10a37f]"
           >
             <SiOpenai size={36} />
           </motion.div>
 
-          {/* 4+ Years Card - Larger and perfectly centered at bottom */}
+          {/* 4+ Years Card - Perfectly centered */}
           <motion.div 
             animate={{ y: [0, -8, 0] }}
             transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
-            className="hero-badge absolute bottom-[6%] left-1/2 -translate-x-1/2 z-30 glass rounded-3xl px-8 py-5 shadow-2xl flex items-center gap-4"
+            className="hero-badge absolute bottom-[2%] left-1/2 -translate-x-1/2 z-30 glass rounded-3xl px-8 py-5 shadow-2xl flex items-center gap-4 whitespace-nowrap"
           >
-            <span className="text-4xl md:text-5xl font-black text-black leading-none tracking-tighter">4+</span>
-            <span className="text-[11px] md:text-xs font-bold text-zinc-500 uppercase tracking-[0.15em] leading-tight">Years<br/>Experience</span>
+            <span className="text-4xl md:text-5xl font-black text-white leading-none tracking-tighter">4+</span>
+            <span className="text-[11px] md:text-xs font-bold text-zinc-400 uppercase tracking-[0.15em] leading-tight">Years<br/>Experience</span>
           </motion.div>
 
         </div>
       </div>
 
-      <div className="hero-line absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-300 to-transparent" />
+      <div className="hero-line absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-800 to-transparent" />
     </section>
   );
 }

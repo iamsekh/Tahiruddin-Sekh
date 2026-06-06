@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "Tahiruddin Sekh | Premium Website Developer & UI/UX Designer",
   description: "Creating high-performance websites, web applications, digital experiences, and growth-focused solutions for modern businesses.",
   icons: {
-    icon: "/favicon.png",
+    icon: "/img/favicon.png",
   },
 };
 
@@ -23,10 +23,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${outfit.variable} font-sans antialiased bg-background text-foreground overflow-x-hidden min-h-screen flex flex-col`}>
+      <body className={`${inter.variable} ${outfit.variable} font-sans antialiased bg-background text-foreground min-h-screen flex flex-col`}>
         <SmoothScroll>
           <Navbar />
-          <main className="flex-grow pt-24">{children}</main>
+          <main className="flex-grow overflow-x-clip">{children}</main>
           <Footer />
         </SmoothScroll>
       </body>

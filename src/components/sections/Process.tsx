@@ -59,14 +59,14 @@ export default function Process() {
           <h3 className="process-header text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
             How We Get There
           </h3>
-          <p className="process-header text-lg text-muted-foreground">
+          <p className="process-header text-lg text-zinc-400">
             A proven, structured approach to deliver excellence at every stage of the project.
           </p>
         </div>
 
         <div className="relative">
           {/* Vertical Line */}
-          <div className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-[2px] bg-white/10 hidden md:block">
+          <div className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-[2px] bg-zinc-800 hidden md:block">
             <div className="process-line w-full h-full bg-accent origin-top" />
           </div>
 
@@ -84,7 +84,7 @@ export default function Process() {
                   <div className="glass p-8 rounded-3xl border border-white/5 hover:border-accent/30 transition-colors relative">
                     <span className="md:hidden absolute -top-4 -left-4 w-10 h-10 rounded-full bg-accent text-black font-bold flex items-center justify-center">{step.num}</span>
                     <h4 className="text-2xl font-bold text-white mb-3">{step.title}</h4>
-                    <p className="text-muted-foreground leading-relaxed">{step.desc}</p>
+                    <p className="text-zinc-400 leading-relaxed">{step.desc}</p>
                   </div>
                 </div>
               </div>

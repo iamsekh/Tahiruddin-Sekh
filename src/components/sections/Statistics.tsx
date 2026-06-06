@@ -43,18 +43,18 @@ export default function Statistics() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative py-20 bg-white overflow-hidden">
+    <section ref={containerRef} className="relative py-10 md:py-16 bg-surface overflow-hidden">
       {/* Subtle top/bottom lines */}
-      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-200 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-200 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-800 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-800 to-transparent" />
       
       <div className="container mx-auto px-6 max-w-6xl">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-10 md:gap-y-12">
           {stats.map((s, i) => (
             <div key={i} className="stat-item flex flex-col items-center text-center">
-              <div className="text-5xl md:text-[3.5rem] font-black text-black tracking-tighter tabular-nums">
+              <div className="text-5xl md:text-[3.5rem] font-black text-white tracking-tighter tabular-nums">
                 <span ref={el => { countRefs.current[i] = el; }} data-target={s.value}>0</span>
-                <span className="text-zinc-300">{s.suffix}</span>
+                <span className="text-[#39ff14]">{s.suffix}</span>
               </div>
               <p className="text-[11px] font-bold text-zinc-400 uppercase tracking-[0.2em] mt-3">{s.label}</p>
             </div>

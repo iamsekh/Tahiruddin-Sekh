@@ -26,14 +26,14 @@ const row2 = [
 
 function LogoCard({ name, src }: { name: string; src: string }) {
   return (
-    <div className="group relative flex-shrink-0 w-[140px] h-[140px] md:w-[160px] md:h-[160px] rounded-[1.75rem] bg-white border border-zinc-100 flex flex-col items-center justify-center gap-4 p-5 hover:border-zinc-200 hover:shadow-[0_20px_50px_-10px_rgba(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-400 cursor-default overflow-hidden">
+    <div className="group relative flex-shrink-0 w-[140px] h-[140px] md:w-[160px] md:h-[160px] rounded-[1.75rem] bg-zinc-900 border border-zinc-800 flex flex-col items-center justify-center gap-4 p-5 hover:border-[#39ff14]/50 hover:shadow-[0_20px_50px_-10px_rgba(57,255,20,0.1)] hover:-translate-y-2 transition-all duration-400 cursor-default overflow-hidden">
       {/* Hover gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-zinc-50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#39ff14]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
       
       <div className="relative z-10 w-12 h-12 md:w-14 md:h-14 flex items-center justify-center">
         <Image src={src} alt={name} fill className="object-contain group-hover:scale-110 transition-transform duration-400" />
       </div>
-      <span className="relative z-10 text-[10px] md:text-[11px] font-bold uppercase tracking-[0.15em] text-zinc-400 group-hover:text-black transition-colors duration-300">{name}</span>
+      <span className="relative z-10 text-[10px] md:text-[11px] font-bold uppercase tracking-[0.15em] text-zinc-400 group-hover:text-[#39ff14] transition-colors duration-300">{name}</span>
     </div>
   );
 }
@@ -55,20 +55,20 @@ export default function TechStack() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-32 bg-white relative overflow-hidden">
+    <section ref={sectionRef} className="py-16 md:py-20 bg-background relative overflow-hidden">
       {/* Gradient separator */}
-      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-200 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-800 to-transparent" />
       
       {/* Decorative radial gradient */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(250,250,250,0.8)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(57,255,20,0.05)_0%,transparent_70%)] pointer-events-none" />
 
-      <div className="container mx-auto px-6 max-w-7xl mb-20 relative z-10 text-center">
+      <div className="container mx-auto px-6 max-w-7xl mb-12 md:mb-20 relative z-10 text-center">
         <div className="tech-header">
           <div className="section-tag mb-6 mx-auto">Tech Stack</div>
-          <h2 className="text-4xl md:text-[3.5rem] font-black tracking-[-0.03em] text-black leading-[1.1]">
-            Tools &amp; <span className="text-zinc-300">Technologies</span>
+          <h2 className="text-4xl md:text-[3.5rem] font-black tracking-[-0.03em] text-white leading-[1.1]">
+            Tools &amp; <span className="text-zinc-600">Technologies</span>
           </h2>
-          <p className="mt-4 text-zinc-500 text-[17px] max-w-xl mx-auto leading-relaxed">
+          <p className="mt-4 text-zinc-400 text-[17px] max-w-xl mx-auto leading-relaxed">
             I build with modern, high-performance tools to ensure every project is scalable, fast, and secure.
           </p>
         </div>
@@ -76,8 +76,8 @@ export default function TechStack() {
 
       <div className="relative w-full flex flex-col gap-6 md:gap-8 overflow-hidden py-6" aria-hidden="true">
         {/* Edge fade overlays */}
-        <div className="absolute left-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-r from-white to-transparent z-20 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-r from-background to-transparent z-20 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-l from-background to-transparent z-20 pointer-events-none" />
 
         {/* Row 1 → scroll left */}
         <div className="flex gap-5 md:gap-6 marquee-left w-max">

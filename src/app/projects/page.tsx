@@ -101,26 +101,26 @@ export default function Projects() {
 
   return (
     <>
-      <section id="projects" className="py-32 bg-surface relative overflow-hidden">
+      <section id="projects" className="py-16 md:py-20 bg-background relative overflow-hidden">
         {/* Gradient separator */}
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-200 to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-800 to-transparent" />
         
         <div className="container mx-auto px-6 max-w-7xl">
           {/* header */}
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-12 md:mb-16">
             <div>
               <div className="section-tag mb-6">Portfolio</div>
-              <h2 className="text-4xl md:text-[3.5rem] font-black tracking-[-0.03em] text-black leading-[1.1]">
-                Selected<br /><span className="text-zinc-300">Work</span>
+              <h2 className="text-4xl md:text-[3.5rem] font-black tracking-[-0.03em] text-white leading-[1.1]">
+                Selected<br /><span className="text-zinc-600">Work</span>
               </h2>
             </div>
 
             {/* Category Filter */}
-            <div className="flex gap-2 p-1 bg-white border border-zinc-100 rounded-full w-fit shadow-sm">
+            <div className="flex flex-wrap gap-2 p-1 bg-zinc-900 border border-zinc-800 rounded-[2rem] w-full md:w-fit shadow-sm">
               {categories.map(c => (
                 <button key={c} onClick={() => setFilter(c)}
-                  className={`px-4 py-2 rounded-full text-[12px] font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer
-                    ${filter === c ? "bg-black text-white shadow-md" : "text-zinc-400 hover:text-black"}`}>
+                  className={`px-4 py-2 rounded-full text-[12px] font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer flex-grow text-center
+                    ${filter === c ? "bg-[#39ff14] text-black shadow-md" : "text-zinc-400 hover:text-white"}`}>
                   {c}
                 </button>
               ))}
@@ -138,18 +138,18 @@ export default function Projects() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.35, delay: i * 0.05 }}
-                  className={`group bg-white rounded-[1.5rem] overflow-hidden border border-zinc-100 flex flex-col transition-all duration-400 hover:border-zinc-200 hover:shadow-[0_24px_60px_-12px_rgba(0,0,0,0.08)] hover:-translate-y-1 ${p.link === "#" ? "opacity-80" : ""}`}
+                  className={`group bg-zinc-900 rounded-[1.5rem] overflow-hidden border border-zinc-800 flex flex-col transition-all duration-400 hover:border-[#39ff14]/50 hover:shadow-[0_24px_60px_-12px_rgba(57,255,20,0.1)] hover:-translate-y-1 ${p.link === "#" ? "opacity-80" : ""}`}
                 >
                   {/* Image Container */}
                   <div 
                     onClick={() => setSelectedImage(p.image)}
-                    className="aspect-[16/10] relative overflow-hidden bg-zinc-100 cursor-pointer"
+                    className="aspect-[16/10] relative overflow-hidden bg-black cursor-pointer"
                   >
                     <Image src={p.image} alt={p.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                     
                     {/* Hover overlay */}
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
-                      <div className="bg-white text-black p-3 rounded-full shadow-2xl scale-0 group-hover:scale-100 transition-transform duration-300">
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+                      <div className="bg-[#39ff14] text-black p-3 rounded-full shadow-2xl scale-0 group-hover:scale-100 transition-transform duration-300">
                         <ZoomIn size={18} />
                       </div>
                     </div>
@@ -163,14 +163,14 @@ export default function Projects() {
                     
                     {p.link !== "#" ? (
                       <a href={p.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 group/link w-fit">
-                        <h3 className="text-lg font-bold text-black group-hover/link:text-zinc-600 transition-colors tracking-tight">{p.title}</h3>
-                        <ExternalLink size={14} className="text-zinc-300 group-hover/link:text-black transition-colors" />
+                        <h3 className="text-lg font-bold text-white group-hover/link:text-[#39ff14] transition-colors tracking-tight">{p.title}</h3>
+                        <ExternalLink size={14} className="text-zinc-500 group-hover/link:text-[#39ff14] transition-colors" />
                       </a>
                     ) : (
-                      <h3 className="text-lg font-bold text-black tracking-tight">{p.title}</h3>
+                      <h3 className="text-lg font-bold text-white tracking-tight">{p.title}</h3>
                     )}
 
-                    <p className="text-[13px] text-zinc-500 leading-relaxed">{p.desc}</p>
+                    <p className="text-[13px] text-zinc-400 leading-relaxed">{p.desc}</p>
                   </div>
                 </motion.div>
               ))}
